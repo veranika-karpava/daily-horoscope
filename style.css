@@ -1,0 +1,303 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.header {
+  background-color: #E1E1E1;
+  width: 100%;
+  padding: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .header {
+    padding: 1.5rem;
+  }
+}
+.header__logo {
+  font-family: "Pinyon Script", cursive;
+  font-size: 2.25rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  color: #000000;
+  text-align: center;
+}
+@media screen and (min-width: 48rem) {
+  .header__logo {
+    font-size: 3rem;
+    font-weight: 400;
+    line-height: 2.25rem;
+    color: #000000;
+  }
+}
+
+.main {
+  height: 85vh;
+  background-image: url("./assets/bg-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.form {
+  padding: 1rem;
+  width: 100%;
+}
+@media screen and (min-width: 48rem) {
+  .form {
+    padding: 3rem 0rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .form {
+    padding: 4rem 0rem;
+    width: 70%;
+  }
+}
+.form__input {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+}
+.form__container {
+  width: 100%;
+  padding-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+@media screen and (min-width: 48rem) {
+  .form__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    padding-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 80rem) {
+  .form__container {
+    padding-bottom: 2.5rem;
+  }
+}
+.form__label {
+  width: 100%;
+  padding-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: #FAFAFA;
+  font-family: "Montserrat", sans-serif;
+}
+@media screen and (min-width: 48rem) {
+  .form__label {
+    width: 50%;
+    padding-bottom: 0rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+    color: #FAFAFA;
+    font-family: "Montserrat", sans-serif;
+  }
+}
+.form__list-sign, .form__list-date {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  height: 2.5rem;
+  padding: 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #E1E1E1;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: #000000;
+  background-color: #FAFAFA;
+  outline: none;
+}
+@media screen and (min-width: 48rem) {
+  .form__list-sign, .form__list-date {
+    width: 50%;
+    height: 3rem;
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2rem;
+    color: #000000;
+  }
+}
+.form__button-submit {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 0.5rem;
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  color: #000000;
+  border-radius: 4px;
+  border: 1px solid #E1E1E1;
+}
+@media screen and (min-width: 48rem) {
+  .form__button-submit {
+    align-self: center;
+    width: 50%;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    color: #000000;
+  }
+  .form__button-submit:hover {
+    background-color: #E1E1E1;
+  }
+}
+
+.prediction {
+  padding: 0rem 1.25rem 1.25rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+@media screen and (min-width: 48rem) {
+  .prediction {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column nowrap;
+    flex-wrap: nowrap;
+    padding: 0rem 0rem 1.25rem;
+    width: 80%;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 48rem) and (min-width: 80rem) {
+  .prediction {
+    width: 70%;
+  }
+}
+.prediction__date, .prediction__card, .prediction__additional-info {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+  background-image: url(./assets/bg-card.jpg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.95;
+  border-radius: 4px;
+  border: 1px solid #E1E1E1;
+}
+@media screen and (min-width: 48rem) {
+  .prediction__date, .prediction__card, .prediction__additional-info {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    flex-wrap: nowrap;
+  }
+}
+.prediction__date {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+@media screen and (min-width: 48rem) {
+  .prediction__date {
+    margin-top: 0rem;
+  }
+}
+.prediction__title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  color: #000000;
+  padding-bottom: 0.8125rem;
+  text-align: center;
+}
+@media screen and (min-width: 48rem) {
+  .prediction__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    color: #000000;
+    padding-bottom: 0rem;
+  }
+}
+.prediction__content {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #000000;
+}
+@media screen and (min-width: 48rem) {
+  .prediction__content {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2rem;
+    color: #000000;
+  }
+}
+.prediction__item {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5rem;
+  color: #000000;
+  text-align: center;
+}
+@media screen and (min-width: 48rem) {
+  .prediction__item {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 2rem;
+    color: #000000;
+  }
+}
+
+.footer {
+  background-color: #E1E1E1;
+  width: 100%;
+  padding: 1rem;
+}
+@media screen and (min-width: 48rem) {
+  .footer {
+    padding: 1.5rem;
+  }
+}
+.footer__content-copyright {
+  font-family: "Pinyon Script", cursive;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2.25rem;
+  color: #000000;
+  text-align: center;
+}
+@media screen and (min-width: 48rem) {
+  .footer__content-copyright {
+    font-size: 1.5rem;
+    font-weight: 400;
+    line-height: 2.25rem;
+    color: #000000;
+  }
+}/*# sourceMappingURL=style.css.map */
