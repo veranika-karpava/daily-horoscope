@@ -40,6 +40,7 @@ ul {
 }
 
 .main {
+  min-height: 95vh;
   height: auto;
   background-image: url("./assets/bg-image.jpg");
   background-size: cover;
