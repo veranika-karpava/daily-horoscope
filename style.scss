@@ -21,23 +21,22 @@ ul {
     width: 100%;
     padding: 1rem;
     @include tablet {
-        padding: 1.5rem;
+        padding: 1.1rem;
     }
 
     &__logo{
     font-family: 'Pinyon Script', cursive;
-    @include font-stack (2.25rem, 400, 2.25rem, $black);
+    @include font-stack (2rem, 400, 2rem, $black);
     text-align: center;
 
     @include tablet {
-        @include font-stack (3rem, 400, 2.25rem, $black);
+        @include font-stack (2.25rem, 400, 2.25rem, $black);
         }
     }
 }
 
 .main {
-    height: 85vh;
-    // min-height: 55rem;
+    height: auto;
     background-image: url('./assets/bg-image.jpg');
     background-size: cover;
     background-position: center;
