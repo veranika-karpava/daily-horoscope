@@ -18,10 +18,21 @@ function createHeaderSection() {
     const headerSection = document.createElement('header');
     headerSection.classList.add('header');
 
+    const containerLogo = document.createElement('div');
+    containerLogo.classList.add('header__container-logo');
+
+
+    const logoIcon = document.createElement('img');
+    logoIcon.classList.add('header__icon-logo');
+    logoIcon.setAttribute('src', '../assets/logo-icon.png');
+    logoIcon.setAttribute('alt', 'Crystal Ball');
+
     const logo = document.createElement('h1');
     logo.classList.add('header__logo');
-    logo.innerText = 'Daily Horoscope';
-    headerSection.appendChild(logo);
+    logo.innerText = 'What will happen today?';
+
+    containerLogo.append(logoIcon, logo);
+    headerSection.appendChild(containerLogo);
 
     return headerSection;
 }

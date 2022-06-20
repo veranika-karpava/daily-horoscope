@@ -3,11 +3,11 @@
 
 * {
     margin: 0;
-    box-sizing: border-box; 
+    box-sizing: border-box;
 }
 
 body {
-    font-family:'Montserrat', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 ul {
@@ -20,25 +20,43 @@ ul {
     background-color: $mercury;
     width: 100%;
     padding: 1rem;
+
     @include tablet {
         padding: 1.1rem;
     }
 
-    &__logo{
-    font-family: 'Pinyon Script', cursive;
-    @include font-stack (2rem, 400, 2rem, $black);
-    text-align: center;
+    &__container-logo {
+        width: 100%;
+        @include flex(flex-start, center, row, nowrap);
+    }
 
-    @include tablet {
-        @include font-stack (2.25rem, 400, 2.25rem, $black);
+    &__icon-logo {
+        width: 2rem;
+        height: 2rem;
+
+        @include tablet {
+            width: 3rem;
+            height: 3rem;
         }
     }
+
+    &__logo {
+        width: 90%;
+        font-family: 'Pinyon Script', cursive;
+        @include font-stack (2rem, 400, 2rem, $black);
+        text-align: center;
+
+        @include tablet {
+            @include font-stack (2.25rem, 400, 2.25rem, $black);
+        }
+    }
+
 }
 
 .main {
     min-height: 95vh;
     height: auto;
-    background-image: url('./assets/bg-image.jpg');
+    background-image: url('./assets/bg-image-new.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -47,11 +65,13 @@ ul {
 .form {
     padding: 1rem;
     width: 100%;
+
     @include tablet {
         padding: 3rem 0rem;
         width: 80%;
         margin: 0 auto;
     }
+
     @include desktop {
         padding: 4rem 0rem;
         width: 70%;
@@ -59,17 +79,19 @@ ul {
 
     &__input {
         @include flex(flex-start, flex-start, column, nowrap);
-        width:100%;
+        width: 100%;
     }
 
     &__container {
         width: 100%;
         padding-bottom: 2rem;
         @include flex(center, center, column, nowrap);
+
         @include tablet {
             @include flex(space-between, center, row, nowrap);
             padding-bottom: 2rem;
         }
+
         @include desktop {
             padding-bottom: 2.5rem;
         }
@@ -79,25 +101,27 @@ ul {
         width: 100%;
         padding-bottom: 0.5rem;
         @include font-stack (1rem, 400, 1.25rem, $alabaster);
-        font-family:'Montserrat', sans-serif;
+        font-family: 'Montserrat', sans-serif;
+
         @include tablet {
             width: 50%;
             padding-bottom: 0rem;
             @include font-stack (1.5rem, 400, 1.5rem, $alabaster);
-            font-family:'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif;
         }
     }
 
     &__list-sign,
     &__list-date {
-        font-family:'Montserrat', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         width: 100%;
         height: 2.5rem;
         padding: 0.5rem;
         @include styleBorderMobile;
         @include font-stack (1rem, 400, 1.25rem, $black);
-        background-color:$alabaster;
+        background-color: $alabaster;
         outline: none;
+
         @include tablet {
             width: 50%;
             height: 3rem;
@@ -106,19 +130,21 @@ ul {
     }
 
     &__button-submit {
-        font-family:'Montserrat', sans-serif;
+        font-family: 'Montserrat', sans-serif;
         margin-top: 0.5rem;
         width: 100%;
         padding: 1rem;
         @include font-stack (1.25rem, 600, 1.25rem, $black);
         @include styleBorderMobile;
+
         @include tablet {
             align-self: center;
             width: 50%;
-            margin-top: 1rem; 
+            margin-top: 1rem;
             @include font-stack (1.5rem, 700, 2rem, $black);
+
             &:hover {
-            background-color: $mercury;
+                background-color: $mercury;
             }
         }
     }
@@ -128,11 +154,13 @@ ul {
     padding: 0rem 1.25rem 1.25rem;
     width: 100%;
     @include flex(space-between, flex-start, column, nowrap);
+
     @include tablet {
         @include flex(space-between, center, column nowrap);
         padding: 0rem 0rem 1.25rem;
         width: 80%;
-        margin:0 auto;
+        margin: 0 auto;
+
         @include desktop {
             width: 70%;
         }
@@ -140,7 +168,7 @@ ul {
 
     &__date,
     &__card,
-    &__additional-info{
+    &__additional-info {
         margin-bottom: 1.5rem;
         padding: 1rem;
         width: 100%;
@@ -148,44 +176,49 @@ ul {
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        opacity:0.95;
+        opacity: 0.95;
         @include styleBorderMobile;
+
         @include tablet {
             margin-bottom: 1.5rem;
-            @include flex(flex-start, center, column, nowrap); 
+            @include flex(flex-start, center, column, nowrap);
         }
     }
 
     &__date {
         margin-top: 1.5rem;
-        @include flex(space-around, center, column, nowrap); 
+        @include flex(space-around, center, column, nowrap);
+
         @include tablet {
-            margin-top: 0rem; 
+            margin-top: 0rem;
         }
     }
 
     &__title {
-       @include font-stack (1.25rem, 700, 1.5rem, $black);
-       padding-bottom: .8125rem;
-       text-align: center;
-       @include tablet {
+        @include font-stack (1.25rem, 700, 1.5rem, $black);
+        padding-bottom: .8125rem;
+        text-align: center;
+
+        @include tablet {
             @include font-stack (1.5rem, 700, 2rem, $black);
             padding-bottom: 0rem;
         }
     }
 
     &__content {
-        @include font-stack (1rem, 400, 1.5rem, $black); 
+        @include font-stack (1rem, 400, 1.5rem, $black);
+
         @include tablet {
-            @include font-stack (1.25rem, 400, 2rem, $black); 
+            @include font-stack (1.25rem, 400, 2rem, $black);
         }
     }
 
     &__item {
-        @include font-stack (1rem, 400, 1.5rem, $black); 
+        @include font-stack (1rem, 400, 1.5rem, $black);
         text-align: center;
+
         @include tablet {
-            @include font-stack (1.25rem, 400, 2rem, $black); 
+            @include font-stack (1.25rem, 400, 2rem, $black);
         }
     }
 }
@@ -194,6 +227,7 @@ ul {
     background-color: $mercury;
     width: 100%;
     padding: 1rem;
+
     @include tablet {
         padding: 1.5rem;
     }
@@ -202,12 +236,9 @@ ul {
         font-family: 'Pinyon Script', cursive;
         @include font-stack (1rem, 400, 2.25rem, $black);
         text-align: center;
+
         @include tablet {
             @include font-stack (1.5rem, 400, 2.25rem, $black);
         }
     }
 }
-
-
-
-

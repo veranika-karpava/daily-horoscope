@@ -22,7 +22,26 @@ ul {
     padding: 1.1rem;
   }
 }
+.header__container-logo {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+.header__icon-logo {
+  width: 2rem;
+  height: 2rem;
+}
+@media screen and (min-width: 48rem) {
+  .header__icon-logo {
+    width: 3rem;
+    height: 3rem;
+  }
+}
 .header__logo {
+  width: 90%;
   font-family: "Pinyon Script", cursive;
   font-size: 2rem;
   font-weight: 400;
@@ -42,7 +61,7 @@ ul {
 .main {
   min-height: 95vh;
   height: auto;
-  background-image: url("./assets/bg-image.jpg");
+  background-image: url("./assets/bg-image-new.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
