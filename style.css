@@ -397,10 +397,24 @@ ul {
   background-repeat: no-repeat;
   width: 100%;
   padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: nowrap;
 }
 @media screen and (min-width: 48rem) {
   .footer {
     padding: 1.5rem;
+  }
+}
+.footer__copyright {
+  width: 90%;
+}
+@media screen and (min-width: 48rem) {
+  .footer__icon {
+    width: 2rem;
+    height: 2rem;
   }
 }
 .footer__content-copyright {

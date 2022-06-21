@@ -250,9 +250,21 @@ ul {
     background-repeat: no-repeat;
     width: 100%;
     padding: 1rem;
+    @include flex(space-between, center, row, nowrap);
 
     @include tablet {
         padding: 1.5rem;
+    }
+
+    &__copyright {
+        width: 90%;
+    }
+
+    &__icon {
+        @include tablet {
+            width: 2rem;
+            height: 2rem;
+        }
     }
 
     &__content-copyright {

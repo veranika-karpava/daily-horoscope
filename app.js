@@ -286,8 +286,22 @@ function createFooterSection() {
     footerContent.classList.add('footer__content-copyright');
     footerContent.innerText = 'Created by Veranika Karpava 2021';
 
+    const footerContainerIcon = document.createElement('div');
+    footerContainerIcon.classList.add('footer__container-icon');
+
+    const footerLink = document.createElement('a');
+    footerLink.classList.add('footer__link');
+    footerLink.setAttribute('href', 'https://github.com/veranika-karpava/daily-horoscope');
+
+    const footerIcon = document.createElement('img');
+    footerIcon.classList.add('footer__icon');
+    footerIcon.setAttribute('src', '../assets/github.svg');
+    footerIcon.setAttribute('alt', 'Github Icon');
+
+    footerLink.appendChild(footerIcon);
+    footerContainerIcon.appendChild(footerLink);
     footerContainer.appendChild(footerContent);
-    footerSection.appendChild(footerContainer);
+    footerSection.append(footerContainer, footerContainerIcon);
 
     return footerSection;
 }
