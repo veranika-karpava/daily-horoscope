@@ -1,6 +1,7 @@
-Daily Horoscope
+# What will Happen Today?
+What will happen today is a JavaScript web application that allows users to get a two-day forecast based on their zodiac sign. 
 
-Daily Horoscope is a JS Web App that allows users to get a prediction for two days depending on the zodiac.
+![Screenshot](screen-shot1.png)
 
 Project Tech Stack
 
