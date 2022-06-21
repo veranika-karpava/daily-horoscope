@@ -21,3 +21,6 @@ Current functionality:
 * Clone or download this project from github
 * Run it locally in your browser
 
+# Demo
+https://what-will-happen-today.netlify.app
+
