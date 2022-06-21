@@ -84,7 +84,8 @@ ul {
         width: 100%;
     }
 
-    &__header-signs {
+    &__header-signs,
+    &__label-date {
         @include font-stack-mobile;
         text-align: center;
         width: 100%;
@@ -113,102 +114,96 @@ ul {
         }
     }
 
+    &__image-sign {
+        @include tablet {
+            &:hover {
+                transform: scale(1.2);
+            }
+        }
+    }
+
     &__date-container {
         @include flex(center, center, column, nowrap);
         width: 100%;
-        padding-bottom: 1rem;
+        padding: 1rem 0;
+
+        @include tablet {
+            padding: 2rem 0;
+        }
 
     }
 
     &__label {
         width: 100%;
-        padding: 0.5rem 0 1rem 0;
-        @include font-stack-mobile;
+        padding-top: 0.5rem;
+        @include font-stack-label-mobile;
         text-align: center;
 
         @include tablet {
             width: 50%;
             padding-bottom: 0rem;
             text-align: center;
-            @include font-stack-tablet;
+            @include font-stack-label-tablet;
         }
     }
+
+    &__label-date {
+        @include tablet {
+            padding-bottom: 1rem;
+        }
+    }
+
 
     &__list-date {
         @include font-stack-input;
-        max-width: 28.75rem;
-        width: 100%;
-        height: 2.5rem;
-        padding: 0.5rem;
+        @include sizeInputButton;
         @include styleBorderMobile;
+        padding: 0.5rem;
         background-color: $alabaster;
         outline: none;
-
-        @include tablet {
-            width: 50%;
-            height: 3rem;
-            // @include font-stack (1.25rem, 400, 2rem, $black);
-        }
     }
 
     &__button-submit {
-        font-family: 'Montserrat', sans-serif;
-        margin-top: 0.5rem;
-        width: 100%;
+        @include font-stack-button;
+        @include sizeInputButton;
+        @include styleBorderButton;
+        background-color: $bg-color-button;
         padding: 1rem;
-        @include font-stack (1.25rem, 600, 1.25rem, $black);
-        @include styleBorderMobile;
 
         @include tablet {
             align-self: center;
-            width: 50%;
-            margin-top: 1rem;
-            @include font-stack (1.5rem, 700, 2rem, $black);
 
             &:hover {
-                background-color: $mercury;
+                background-color: $blue-rgba;
             }
         }
     }
 }
 
 .prediction {
-    padding: 0rem 1.25rem 1.25rem;
-    width: 100%;
-    @include flex(space-between, flex-start, column, nowrap);
+    @include sizePredictionSection;
+    @include flex(space-between, center, column, nowrap);
 
     @include tablet {
         @include flex(space-between, center, column nowrap);
-        padding: 0rem 0rem 1.25rem;
-        width: 80%;
         margin: 0 auto;
-
-        @include desktop {
-            width: 70%;
-        }
     }
 
     &__date,
     &__card,
     &__additional-info {
-        margin-bottom: 1.5rem;
+        margin-bottom: 1rem;
         padding: 1rem;
         width: 100%;
-        background-image: url('./assets/bg-card.jpg');
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        opacity: 0.95;
-        @include styleBorderMobile;
+        background-color: $blue-rgba;
+        @include styleBorderPrediction;
 
         @include tablet {
-            margin-bottom: 1.5rem;
-            @include flex(flex-start, center, column, nowrap);
+            margin-bottom: 2rem;
         }
     }
 
     &__date {
-        margin-top: 1.5rem;
         @include flex(space-around, center, column, nowrap);
 
         @include tablet {
@@ -217,31 +212,24 @@ ul {
     }
 
     &__title {
-        @include font-stack (1.25rem, 700, 1.5rem, $black);
-        padding-bottom: .8125rem;
+        @include font-stack-title;
+        padding-bottom: .5rem;
         text-align: center;
 
         @include tablet {
-            @include font-stack (1.5rem, 700, 2rem, $black);
-            padding-bottom: 0rem;
+            padding-bottom: 1rem;
         }
     }
 
     &__content {
-        @include font-stack (1rem, 400, 1.5rem, $black);
-
-        @include tablet {
-            @include font-stack (1.25rem, 400, 2rem, $black);
-        }
+        @include font-stack-content;
+        text-align: center;
     }
 
     &__item {
-        @include font-stack (1rem, 400, 1.5rem, $black);
+        @include font-stack-content;
         text-align: center;
-
-        @include tablet {
-            @include font-stack (1.25rem, 400, 2rem, $black);
-        }
+        padding-bottom: .5rem;
     }
 }
 

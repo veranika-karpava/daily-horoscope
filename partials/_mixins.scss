@@ -15,12 +15,6 @@
     flex-wrap: $flex-wrap;
 }
 
-
-@mixin styleBorderMobile {
-    border-radius: 4px;
-    border: 1px solid $mercury;
-}
-
 @mixin tablet {
     @media screen and (min-width: $tablet-breakpoint) {
         @content;
@@ -57,11 +51,92 @@
 }
 
 @mixin font-stack-input {
-    @include font-stack (1rem, 400, 1rem, $black);
+    @include font-stack (.8rem, 400, .8rem, $black);
     font-family: 'Montserrat', sans-serif;
 
     @include tablet {
-        @include font-stack (1.25rem, 400, 1.25rem, $black);
+        @include font-stack (1rem, 400, 1rem, $black);
+    }
+}
+
+@mixin font-stack-label-mobile {
+    @include font-stack (.8rem, 400, .8rem, $alabaster);
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin font-stack-label-tablet {
+    @include font-stack (1rem, 400, 1rem, $alabaster);
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin font-stack-button {
+    @include font-stack (.8rem, 600, .8rem, $alabaster);
+    font-family: 'Montserrat', sans-serif;
+
+    @include tablet {
+        @include font-stack (1rem, 600, 1rem, $alabaster);
+    }
+}
+
+@mixin font-stack-title {
+    @include font-stack (1rem, 700, 1rem, $alabaster);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .3rem;
+
+    @include tablet {
+        @include font-stack (1.25rem, 700, 1.25rem, $alabaster);
+        letter-spacing: .3rem;
+    }
+}
+
+@mixin font-stack-content {
+    @include font-stack (.8rem, 400, 1rem, $alabaster);
+    font-family: 'Montserrat', sans-serif;
+
+    @include tablet {
+        @include font-stack (1rem, 400, 1.25rem, $alabaster);
+    }
+}
+
+@mixin styleBorderMobile {
+    border-radius: 4px;
+    border: 1px solid $mercury;
+}
+
+@mixin styleBorderButton {
+    border-radius: 4px;
+    border: none;
+    box-shadow: $blue-rgba 1.95px 1.95px 2.6px;
+}
+
+@mixin styleBorderPrediction {
+    border-radius: 4px;
+    border: none;
+    box-shadow: $bg-color-button 1.95px 1.95px 2.6px;
+}
+
+@mixin sizeInputButton {
+    max-width: 12.75rem;
+    width: 100%;
+    height: 2.5rem;
+
+    @include tablet {
+        max-width: 15.75rem;
+        width: 50%;
+        height: 3rem;
+    }
+}
+
+@mixin sizePredictionSection {
+    padding: 0 2rem 1rem 2rem;
+    width: 100%;
+
+    @include tablet {
+        padding-bottom: 0;
+        width: 70%;
     }
 
+    @include desktop {
+        width: 70%;
+    }
 }

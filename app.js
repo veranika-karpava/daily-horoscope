@@ -169,7 +169,7 @@ function createDateContainer() {
     selectContainer.classList.add('form__date-container');
 
     const labelPrediction = document.createElement('label');
-    labelPrediction.classList.add('form__label');
+    labelPrediction.classList.add('form__label-date');
     labelPrediction.setAttribute('for', 'prediction-date');
     labelPrediction.innerText = "Select a prediction date:";
 
@@ -252,19 +252,28 @@ function createAdditionalCard(signDescription) {
     const additionalList = document.createElement('ul');
     additionalList.classList.add('prediction__list');
 
-    const additionalItemCompatibility = document.createElement('li');
-    additionalItemCompatibility.classList.add('prediction__item');
-    additionalItemCompatibility.innerText = (`Compatibility:  ${signDescription.compatibility}`);
+    for (let key in signDescription) {
+        let value = signDescription[key];
+        if (key === 'lucky_time' || 'lucky_number' || 'compatibility' || 'mood') {
+            console.log(key)
+            const additionalItem = document.createElement('li');
+            additionalItem.classList.add('prediction__item');
+            if (key === 'compatibility') {
+                additionalItem.innerText = (`Compatibility:  ${value}`);
+            } else if (key === 'lucky_number') {
+                additionalItem.innerText = (`Lucky number:  ${value}`);
+            } else if (key === 'lucky_time') {
+                additionalItem.innerText = (`Lucky time:  ${value}`);
+            } else if (key === 'mood') {
+                additionalItem.innerText = (`Mood:  ${value}`);
+            }
 
-    const additionalItemNumber = document.createElement('li');
-    additionalItemNumber.classList.add('prediction__item');
-    additionalItemNumber.innerText = (`Lucky number:  ${signDescription.lucky_number}`);
+            additionalList.appendChild(additionalItem);
+        } else {
+            return;
+        }
 
-    const additionalItemTime = document.createElement('li');
-    additionalItemTime.classList.add('prediction__item');
-    additionalItemTime.innerText = (`Lucky time:  ${signDescription.lucky_time}`);
-
-    additionalList.append(additionalItemCompatibility, additionalItemNumber, additionalItemTime);
+    }
 
     additionalCard.append(aditionalTitle, additionalList);
 
