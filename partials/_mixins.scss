@@ -98,6 +98,19 @@
     }
 }
 
+@mixin font-stack-footer {
+    width: 100%;
+    font-family: 'Pinyon Script', cursive;
+    @include font-stack (1rem, 400, 1rem, $alabaster);
+    letter-spacing: 1.5px;
+
+    @include tablet {
+        width: 100%;
+        @include font-stack (1.25rem, 400, 1.25rem, $alabaster);
+        letter-spacing: 2px;
+    }
+}
+
 @mixin styleBorderMobile {
     border-radius: 4px;
     border: 1px solid $mercury;

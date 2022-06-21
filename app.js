@@ -252,8 +252,6 @@ function createAdditionalCard(signDescription) {
     const additionalList = document.createElement('ul');
     additionalList.classList.add('prediction__list');
 
-
-
     for (let key in signDescription) {
         let value = signDescription[key];
         if (key === 'lucky_time' || key === 'lucky_number' || key === 'compatibility' || key === 'mood') {
@@ -286,7 +284,7 @@ function createFooterSection() {
 
     const footerContent = document.createElement('p');
     footerContent.classList.add('footer__content-copyright');
-    footerContent.innerText = 'Veranika Karpava © 2021 Brainstation';
+    footerContent.innerText = 'Created by Veranika Karpava 2021';
 
     footerContainer.appendChild(footerContent);
     footerSection.appendChild(footerContainer);
@@ -319,7 +317,6 @@ formSubmit.addEventListener('submit', (event) => {
             .then(response => {
                 const predictionDay = response.data;
                 displayPrediction(predictionDay);
-                console.log(predictionDay);
             })
             .catch(error => console.log(error))
     } else {
@@ -329,7 +326,6 @@ formSubmit.addEventListener('submit', (event) => {
             .then(response => {
                 const predictionDay = response.data;
                 displayPrediction(predictionDay);
-                console.log(predictionDay);
             })
             .catch(error => console.log(error))
     }
