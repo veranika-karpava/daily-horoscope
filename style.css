@@ -143,6 +143,7 @@ ul {
 }
 @media screen and (min-width: 48rem) {
   .form__input-container {
+    cursor: pointer;
     width: 24%;
   }
 }
@@ -154,6 +155,11 @@ ul {
 @media screen and (min-width: 48rem) {
   .form__image-sign:hover {
     transform: scale(1.2);
+  }
+}
+@media screen and (min-width: 48rem) {
+  .form__option-sign {
+    cursor: pointer;
   }
 }
 .form__date-container {
@@ -263,6 +269,7 @@ ul {
 @media screen and (min-width: 48rem) {
   .form__button-submit {
     align-self: center;
+    cursor: pointer;
   }
   .form__button-submit:hover {
     background-color: rgba(0, 0, 255, 0.4);

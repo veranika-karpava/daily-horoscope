@@ -77,6 +77,7 @@ ul {
     &__input {
         @include flex(center, center, column, nowrap);
         width: 100%;
+
     }
 
     &__main-container {
@@ -106,6 +107,7 @@ ul {
         width: 33%;
 
         @include tablet {
+            cursor: pointer;
             width: 24%;
         }
 
@@ -119,6 +121,12 @@ ul {
             &:hover {
                 transform: scale(1.2);
             }
+        }
+    }
+
+    &__option-sign {
+        @include tablet {
+            cursor: pointer;
         }
     }
 
@@ -173,6 +181,7 @@ ul {
 
         @include tablet {
             align-self: center;
+            cursor: pointer;
 
             &:hover {
                 background-color: $blue-rgba;
