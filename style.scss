@@ -148,11 +148,12 @@ ul {
     }
 
     &__label-date {
+        padding-bottom: 1rem;
+
         @include tablet {
             padding-bottom: 1rem;
         }
     }
-
 
     &__list-date {
         @include font-stack-input;

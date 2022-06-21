@@ -252,10 +252,11 @@ function createAdditionalCard(signDescription) {
     const additionalList = document.createElement('ul');
     additionalList.classList.add('prediction__list');
 
+
+
     for (let key in signDescription) {
         let value = signDescription[key];
-        if (key === 'lucky_time' || 'lucky_number' || 'compatibility' || 'mood') {
-            console.log(key)
+        if (key === 'lucky_time' || key === 'lucky_number' || key === 'compatibility' || key === 'mood') {
             const additionalItem = document.createElement('li');
             additionalItem.classList.add('prediction__item');
             if (key === 'compatibility') {
@@ -267,16 +268,10 @@ function createAdditionalCard(signDescription) {
             } else if (key === 'mood') {
                 additionalItem.innerText = (`Mood:  ${value}`);
             }
-
             additionalList.appendChild(additionalItem);
-        } else {
-            return;
         }
-
     }
-
     additionalCard.append(aditionalTitle, additionalList);
-
     return additionalCard;
 }
 
@@ -311,8 +306,6 @@ formSubmit.addEventListener('submit', (event) => {
     event.preventDefault();
 
     const signInputValue = document.querySelector('.form__option-sign:checked').value.toLowerCase();
-
-    console.log(signInputValue)
 
     const dateInputValue = document.querySelector('.form__list-date').value.toLowerCase();
 

@@ -192,6 +192,9 @@ ul {
     font-family: "Montserrat", sans-serif;
   }
 }
+.form__label-date {
+  padding-bottom: 1rem;
+}
 @media screen and (min-width: 48rem) {
   .form__label-date {
     padding-bottom: 1rem;
