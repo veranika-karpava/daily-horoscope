@@ -1,33 +1,67 @@
 @use "./variables" as *;
-@mixin font-stack ($font-size, $font-weight, $line-height, $color){
+
+@mixin font-stack ($font-size, $font-weight, $line-height, $color) {
     font-size: $font-size;
     font-weight: $font-weight;
-    line-height:$line-height;
+    line-height: $line-height;
     color: $color;
 }
 
-@mixin flex($justify-content: flex-start, $align-items: stretch, $flex-direction: row, $flex-wrap: nowrap){
-    display:flex;
+@mixin flex($justify-content: flex-start, $align-items: stretch, $flex-direction: row, $flex-wrap: nowrap) {
+    display: flex;
     justify-content: $justify-content;
     align-items: $align-items;
     flex-direction: $flex-direction;
     flex-wrap: $flex-wrap;
-    }
+}
 
 
-@mixin styleBorderMobile{
-        border-radius: 4px;
-        border: 1px solid $mercury;
+@mixin styleBorderMobile {
+    border-radius: 4px;
+    border: 1px solid $mercury;
+}
+
+@mixin tablet {
+    @media screen and (min-width: $tablet-breakpoint) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media screen and (min-width: $desktop-breakpoint) {
+        @content;
+    }
+}
+
+@mixin font-stack-mobile {
+    @include font-stack (1rem, 400, 1rem, $alabaster);
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin font-stack-tablet {
+    @include font-stack (1.25rem, 400, 1.25rem, $alabaster);
+    font-family: 'Montserrat', sans-serif;
+}
+
+@mixin font-stack-logo {
+    width: 90%;
+    font-family: 'Pinyon Script', cursive;
+    @include font-stack (1.8rem, 400, 2rem, $alabaster);
+    letter-spacing: 1.5px;
+
+    @include tablet {
+        width: 90%;
+        @include font-stack (2.25rem, 400, 2.25rem, $alabaster);
+        letter-spacing: 2px;
+    }
+}
+
+@mixin font-stack-input {
+    @include font-stack (1rem, 400, 1rem, $black);
+    font-family: 'Montserrat', sans-serif;
+
+    @include tablet {
+        @include font-stack (1.25rem, 400, 1.25rem, $black);
     }
 
-    @mixin tablet {
-        @media screen and (min-width: $tablet-breakpoint) {
-            @content;        
-        }
-    }
-    
-    @mixin desktop {
-        @media screen and (min-width: $desktop-breakpoint) {
-            @content;        
-        }
-    }
+}

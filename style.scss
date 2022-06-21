@@ -17,7 +17,10 @@ ul {
 
 // for header section
 .header {
-    background-color: $mercury;
+    background-image: url('./assets/bg-image-new.jpg');
+    background-size: cover;
+    background-position: left top;
+    background-repeat: no-repeat;
     width: 100%;
     padding: 1rem;
 
@@ -35,20 +38,14 @@ ul {
         height: 2rem;
 
         @include tablet {
-            width: 3rem;
-            height: 3rem;
+            width: 2.5rem;
+            height: 2.5rem;
         }
     }
 
     &__logo {
-        width: 90%;
-        font-family: 'Pinyon Script', cursive;
-        @include font-stack (2rem, 400, 2rem, $black);
+        @include font-stack-logo;
         text-align: center;
-
-        @include tablet {
-            @include font-stack (2.25rem, 400, 2.25rem, $black);
-        }
     }
 
 }
@@ -67,65 +64,90 @@ ul {
     width: 100%;
 
     @include tablet {
-        padding: 3rem 0rem;
+        padding: 2rem 0rem;
         width: 80%;
         margin: 0 auto;
     }
 
     @include desktop {
-        padding: 4rem 0rem;
+        padding: 2rem 0rem;
         width: 70%;
     }
 
     &__input {
-        @include flex(flex-start, flex-start, column, nowrap);
+        @include flex(center, center, column, nowrap);
         width: 100%;
     }
 
-    &__container {
-        width: 100%;
-        padding-bottom: 2rem;
+    &__main-container {
         @include flex(center, center, column, nowrap);
+        width: 100%;
+    }
+
+    &__header-signs {
+        @include font-stack-mobile;
+        text-align: center;
+        width: 100%;
+        padding-bottom: 0.5rem;
 
         @include tablet {
-            @include flex(space-between, center, row, nowrap);
-            padding-bottom: 2rem;
+            @include font-stack-tablet;
+        }
+    }
+
+    &__container {
+        @include flex(space-between, center, row, wrap);
+        width: 100%;
+    }
+
+    &__input-container {
+        @include flex(center, center, column, wrap);
+        width: 33%;
+
+        @include tablet {
+            width: 24%;
         }
 
         @include desktop {
-            padding-bottom: 2.5rem;
+            width: 16%;
         }
+    }
+
+    &__date-container {
+        @include flex(center, center, column, nowrap);
+        width: 100%;
+        padding-bottom: 1rem;
+
     }
 
     &__label {
         width: 100%;
-        padding-bottom: 0.5rem;
-        @include font-stack (1rem, 400, 1.25rem, $alabaster);
-        font-family: 'Montserrat', sans-serif;
+        padding: 0.5rem 0 1rem 0;
+        @include font-stack-mobile;
+        text-align: center;
 
         @include tablet {
             width: 50%;
             padding-bottom: 0rem;
-            @include font-stack (1.5rem, 400, 1.5rem, $alabaster);
-            font-family: 'Montserrat', sans-serif;
+            text-align: center;
+            @include font-stack-tablet;
         }
     }
 
-    &__list-sign,
     &__list-date {
-        font-family: 'Montserrat', sans-serif;
+        @include font-stack-input;
+        max-width: 28.75rem;
         width: 100%;
         height: 2.5rem;
         padding: 0.5rem;
         @include styleBorderMobile;
-        @include font-stack (1rem, 400, 1.25rem, $black);
         background-color: $alabaster;
         outline: none;
 
         @include tablet {
             width: 50%;
             height: 3rem;
-            @include font-stack (1.25rem, 400, 2rem, $black);
+            // @include font-stack (1.25rem, 400, 2rem, $black);
         }
     }
 
@@ -172,7 +194,7 @@ ul {
         margin-bottom: 1.5rem;
         padding: 1rem;
         width: 100%;
-        background-image: url(./assets/bg-card.jpg);
+        background-image: url('./assets/bg-card.jpg');
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;

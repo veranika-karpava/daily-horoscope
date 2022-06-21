@@ -1,4 +1,54 @@
 const apiUrl = 'https://aztro.sameerkumar.website/';
+let signsData = [
+    {
+        image: "../assets/aries.png",
+        value: "Aries"
+    },
+    {
+        image: "../assets/taurus.png",
+        value: "Taurus"
+    },
+    {
+        image: "../assets/gemini.png",
+        value: "Gemini"
+    },
+    {
+        image: "../assets/cancer.png",
+        value: "Cancer"
+    },
+    {
+        image: "../assets/leo.png",
+        value: "Leo"
+    },
+    {
+        image: "../assets/virgo.png",
+        value: "Virgo"
+    },
+    {
+        image: "../assets/libra.png",
+        value: "Libra"
+    },
+    {
+        image: "../assets/scorpio.png",
+        value: "Scorpio"
+    },
+    {
+        image: "../assets/sagittarius.png",
+        value: "Sagittarius"
+    },
+    {
+        image: "../assets/capricorn.png",
+        value: "Capricorn"
+    },
+    {
+        image: "../assets/aquarius.png",
+        value: "Aquarius"
+    },
+    {
+        image: "../assets/pisces.png",
+        value: "Pisces"
+    }
+]
 
 const body = document.querySelector('body');
 
@@ -65,92 +115,58 @@ function createSectionInput() {
     return formInput;
 }
 
+function createInputSignsContainer(sign) {
+    let inputSignsContainer = document.createElement('div');
+    inputSignsContainer.classList.add('form__input-container');
+
+    let imageSign = document.createElement('img');
+    imageSign.classList.add('form__image-sign');
+    imageSign.setAttribute('src', sign.image);
+    imageSign.alt = sign.value;
+
+    let inputSign = document.createElement('input');
+    inputSign.classList.add('form__option-sign');
+    inputSign.type = "radio";
+    inputSign.id = sign.value;
+    inputSign.name = 'sign';
+    inputSign.value = sign.value;
+
+    let labelSign = document.createElement('label');
+    labelSign.classList.add('form__label');
+    labelSign.setAttribute('for', sign.value);
+    labelSign.innerText = sign.value;
+
+    inputSignsContainer.append(imageSign, inputSign, labelSign);
+    return inputSignsContainer;
+}
+
 function createSignContainer() {
+
+    const signMainContainer = document.createElement('div');
+    signMainContainer.classList.add('form__main-container');
+
+    const headerForSignsForm = document.createElement('h2');
+    headerForSignsForm.classList.add('form__header-signs');
+    headerForSignsForm.innerText = "What is your zodiac sign?";
 
     const signContainer = document.createElement('div');
     signContainer.classList.add('form__container');
 
-    const labelSign = document.createElement('label');
-    labelSign.classList.add('form__label');
-    labelSign.setAttribute('for', 'sign');
-    labelSign.innerText = "Select your sign:";
+    // Input Signs Container
+    for (let i = 0; i < signsData.length; i++) {
+        let sign = signsData[i];
+        let inputContainer = createInputSignsContainer(sign);
+        signContainer.appendChild(inputContainer);
+    }
+    signMainContainer.append(headerForSignsForm, signContainer);
 
-    const inputSign = document.createElement('select');
-    inputSign.classList.add('form__list-sign');
-    inputSign.id = "sign";
-    inputSign.name = "sign";
-
-    const optionSignAries = document.createElement('option');
-    optionSignAries.classList.add('form__option-sign');
-    optionSignAries.value = "Aries"
-    optionSignAries.innerText = "Aries";
-
-    const optionSignTaurus = document.createElement('option');
-    optionSignTaurus.classList.add('form__option-sign');
-    optionSignTaurus.value = "Taurus"
-    optionSignTaurus.innerText = "Taurus";
-
-    const optionSignGemini = document.createElement('option');
-    optionSignGemini.classList.add('form__option-sign');
-    optionSignGemini.value = "Gemini"
-    optionSignGemini.innerText = "Gemini";
-
-    const optionSignCancer = document.createElement('option');
-    optionSignCancer.classList.add('form__option-sign');
-    optionSignCancer.value = "Cancer"
-    optionSignCancer.innerText = "Cancer";
-
-    const optionSignLeo = document.createElement('option');
-    optionSignLeo.classList.add('form__option-sign');
-    optionSignLeo.value = "Leo"
-    optionSignLeo.innerText = "Leo";
-
-    const optionSignVirgo = document.createElement('option');
-    optionSignVirgo.classList.add('form__option-sign');
-    optionSignVirgo.value = "Virgo"
-    optionSignVirgo.innerText = "Virgo";
-
-    const optionSignLibra = document.createElement('option');
-    optionSignLibra.classList.add('form__option-sign');
-    optionSignLibra.value = "Libra"
-    optionSignLibra.innerText = "Libra";
-
-    const optionSignScorpio = document.createElement('option');
-    optionSignScorpio.classList.add('form__option-sign');
-    optionSignScorpio.value = "Scorpio"
-    optionSignScorpio.innerText = "Scorpio";
-
-    const optionSignSagittarius = document.createElement('option');
-    optionSignSagittarius.classList.add('form__option-sign');
-    optionSignSagittarius.value = "Sagittarius"
-    optionSignSagittarius.innerText = "Sagittarius";
-
-    const optionSignCapricorn = document.createElement('option');
-    optionSignCapricorn.classList.add('form__option-sign');
-    optionSignCapricorn.value = "Capricorn"
-    optionSignCapricorn.innerText = "Capricorn";
-
-    const optionSignAquarius = document.createElement('option');
-    optionSignAquarius.classList.add('form__option-sign');
-    optionSignAquarius.value = "Aquarius"
-    optionSignAquarius.innerText = "Aquarius";
-
-    const optionSignPisces = document.createElement('option');
-    optionSignPisces.classList.add('form__option-sign');
-    optionSignPisces.value = "Pisces"
-    optionSignPisces.innerText = "Pisces";
-
-    inputSign.append(optionSignAries, optionSignTaurus, optionSignGemini, optionSignCancer, optionSignLeo, optionSignVirgo, optionSignLibra, optionSignScorpio, optionSignSagittarius, optionSignCapricorn, optionSignAquarius, optionSignPisces);
-
-    signContainer.append(labelSign, inputSign);
-
-    return signContainer;
+    return signMainContainer;
 }
 
 function createDateContainer() {
 
     const selectContainer = document.createElement('div');
-    selectContainer.classList.add('form__container');
+    selectContainer.classList.add('form__date-container');
 
     const labelPrediction = document.createElement('label');
     labelPrediction.classList.add('form__label');
@@ -162,17 +178,15 @@ function createDateContainer() {
     inputPrediction.id = "prediction-date";
     inputPrediction.name = "prediction-date";
 
-    const optionPredictionToday = document.createElement('option');
-    optionPredictionToday.classList.add('form__option-date');
-    optionPredictionToday.value = "Today"
-    optionPredictionToday.innerText = "Today";
-
-    const optionPredictionTomorrow = document.createElement('option');
-    optionPredictionTomorrow.classList.add('form__option-date');
-    optionPredictionTomorrow.value = "Tomorrow"
-    optionPredictionTomorrow.innerText = "Tomorrow";
-
-    inputPrediction.append(optionPredictionToday, optionPredictionTomorrow);
+    // create option for Date for select form
+    let selectedDate = ["Today", "Tomorrow"];
+    for (let i = 0; i < selectedDate.length; i++) {
+        const optionPredictionDate = document.createElement('option');
+        optionPredictionDate.classList.add('form__option-date');
+        optionPredictionDate.value = selectedDate[i];
+        optionPredictionDate.innerText = selectedDate[i];
+        inputPrediction.appendChild(optionPredictionDate);
+    }
 
     selectContainer.append(labelPrediction, inputPrediction);
 
@@ -287,7 +301,9 @@ formSubmit.addEventListener('submit', (event) => {
 
     event.preventDefault();
 
-    const signInputValue = document.querySelector('.form__list-sign').value.toLowerCase();
+    const signInputValue = document.querySelector('.form__option-sign:checked').value.toLowerCase();
+
+    console.log(signInputValue)
 
     const dateInputValue = document.querySelector('.form__list-date').value.toLowerCase();
 
@@ -315,8 +331,6 @@ formSubmit.addEventListener('submit', (event) => {
             })
             .catch(error => console.log(error))
     }
-
-    // event.target.reset();
 })
 
 

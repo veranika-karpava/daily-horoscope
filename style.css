@@ -13,7 +13,10 @@ ul {
 }
 
 .header {
-  background-color: #E1E1E1;
+  background-image: url("./assets/bg-image-new.jpg");
+  background-size: cover;
+  background-position: left top;
+  background-repeat: no-repeat;
   width: 100%;
   padding: 1rem;
 }
@@ -36,25 +39,28 @@ ul {
 }
 @media screen and (min-width: 48rem) {
   .header__icon-logo {
-    width: 3rem;
-    height: 3rem;
+    width: 2.5rem;
+    height: 2.5rem;
   }
 }
 .header__logo {
   width: 90%;
   font-family: "Pinyon Script", cursive;
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 400;
   line-height: 2rem;
-  color: #000000;
+  color: #FAFAFA;
+  letter-spacing: 1.5px;
   text-align: center;
 }
 @media screen and (min-width: 48rem) {
   .header__logo {
+    width: 90%;
     font-size: 2.25rem;
     font-weight: 400;
     line-height: 2.25rem;
-    color: #000000;
+    color: #FAFAFA;
+    letter-spacing: 2px;
   }
 }
 
@@ -73,91 +79,136 @@ ul {
 }
 @media screen and (min-width: 48rem) {
   .form {
-    padding: 3rem 0rem;
+    padding: 2rem 0rem;
     width: 80%;
     margin: 0 auto;
   }
 }
 @media screen and (min-width: 80rem) {
   .form {
-    padding: 4rem 0rem;
+    padding: 2rem 0rem;
     width: 70%;
   }
 }
 .form__input {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
   width: 100%;
 }
-.form__container {
-  width: 100%;
-  padding-bottom: 2rem;
+.form__main-container {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
+  width: 100%;
+}
+.form__header-signs {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  color: #FAFAFA;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  width: 100%;
+  padding-bottom: 0.5rem;
 }
 @media screen and (min-width: 48rem) {
-  .form__container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    padding-bottom: 2rem;
+  .form__header-signs {
+    font-size: 1.25rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    color: #FAFAFA;
+    font-family: "Montserrat", sans-serif;
+  }
+}
+.form__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.form__input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 33%;
+}
+@media screen and (min-width: 48rem) {
+  .form__input-container {
+    width: 24%;
   }
 }
 @media screen and (min-width: 80rem) {
-  .form__container {
-    padding-bottom: 2.5rem;
+  .form__input-container {
+    width: 16%;
   }
+}
+.form__date-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding-bottom: 1rem;
 }
 .form__label {
   width: 100%;
-  padding-bottom: 0.5rem;
+  padding: 0.5rem 0 1rem 0;
   font-size: 1rem;
   font-weight: 400;
-  line-height: 1.25rem;
+  line-height: 1rem;
   color: #FAFAFA;
   font-family: "Montserrat", sans-serif;
+  text-align: center;
 }
 @media screen and (min-width: 48rem) {
   .form__label {
     width: 50%;
     padding-bottom: 0rem;
-    font-size: 1.5rem;
+    text-align: center;
+    font-size: 1.25rem;
     font-weight: 400;
-    line-height: 1.5rem;
+    line-height: 1.25rem;
     color: #FAFAFA;
     font-family: "Montserrat", sans-serif;
   }
 }
-.form__list-sign, .form__list-date {
+.form__list-date {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1rem;
+  color: #000000;
   font-family: "Montserrat", sans-serif;
+  max-width: 28.75rem;
   width: 100%;
   height: 2.5rem;
   padding: 0.5rem;
   border-radius: 4px;
   border: 1px solid #E1E1E1;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 1.25rem;
-  color: #000000;
   background-color: #FAFAFA;
   outline: none;
 }
 @media screen and (min-width: 48rem) {
-  .form__list-sign, .form__list-date {
-    width: 50%;
-    height: 3rem;
+  .form__list-date {
     font-size: 1.25rem;
     font-weight: 400;
-    line-height: 2rem;
+    line-height: 1.25rem;
     color: #000000;
+  }
+}
+@media screen and (min-width: 48rem) {
+  .form__list-date {
+    width: 50%;
+    height: 3rem;
   }
 }
 .form__button-submit {
@@ -217,7 +268,7 @@ ul {
   margin-bottom: 1.5rem;
   padding: 1rem;
   width: 100%;
-  background-image: url(./assets/bg-card.jpg);
+  background-image: url("./assets/bg-card.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
