@@ -1,5 +1,5 @@
 # What will Happen Today
-What will happen today is a JavaScript web application that allows users to get a two-day predictions based on their zodiac sign. 
+What will happen today is a fully responsive JavaScript web application that allows users to get two-day predictions based on their zodiac sign. 
 
 Purpose:
 * Daily horoscope offers a broad guideline for planning the activities of the day.
